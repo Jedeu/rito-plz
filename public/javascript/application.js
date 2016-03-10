@@ -7,7 +7,20 @@ $(function() {
     return data.replace(/<\/?[^>]+>/gi, '');
   }
 
+
+
+  champToSearch = $("#search-query").val()
+
+  $("#search-query").on("submit", function(){
+
+
+
+  });
+
+
+
   $("#yi-button").on("click", function() {
+    $('html, body').animate({scrollTop:0}, 'slow');
     $.ajax(
       {url: "https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/11?champData=image&api_key=522d5503-1a3e-4b2e-bf82-80bccbc4056f", success: function(data) {
           
@@ -23,7 +36,7 @@ $(function() {
           var p_tag = $("<p>");
           fixed_lore = remove_html(lore);
           p_tag.text(fixed_lore);
-          p_tag.appendTo('#lore-lander').hide().fadeIn('slow');
+          p_tag.appendTo('#lore-lander').hide().fadeIn(1200);
         }
 
       });

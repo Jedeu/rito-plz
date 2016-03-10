@@ -1,6 +1,25 @@
-html {
-  background-color: black;
+body {
+  background-image: url('/bgimage.png');
+  background-repeat:no-repeat;
+  background-position: top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+#yi-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-top: 100%;
+}
+
+.container{
+  /*stuffs that make it nice and centre*/
+}
+
 
 h1{
   color: white;
