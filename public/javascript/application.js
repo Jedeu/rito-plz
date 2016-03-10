@@ -1,8 +1,11 @@
 $(function() {
 
-  $('#image-lander').empty();
-  var img_tag = $("<img>");
+  var img_tag = $("<img>", {id: "champ-img"});
   img_tag.appendTo('#image-lander');
+
+  remove_html = function(data) {
+    return data.replace(/<\/?[^>]+>/gi, '');
+  }
 
   $("#yi-button").on("click", function() {
     $.ajax(
@@ -18,8 +21,9 @@ $(function() {
           $('#lore-lander').empty();
           var lore = (data['lore']);
           var p_tag = $("<p>");
-          p_tag.text(lore);
-          p_tag.appendTo('#lore-lander');
+          fixed_lore = remove_html(lore);
+          p_tag.text(fixed_lore);
+          p_tag.appendTo('#lore-lander').hide().fadeIn('slow');
         }
 
       });
